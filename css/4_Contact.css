@@ -1,0 +1,32 @@
+.contact {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url("../Pics/background-aespa2.jpg") 23%;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.contact .inform {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.contact .inform h3 {
+  color: rgb(144, 221, 245);
+}
+.contact .social-icons {
+  position: unset;
+}
+
+@media (max-width: 450px) {
+  .contact {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url("../Pics/background-aespa2.jpg");
+    background-size: cover;
+    background-position-x: 42%;
+  }
+}/*# sourceMappingURL=4_Contact.css.map */

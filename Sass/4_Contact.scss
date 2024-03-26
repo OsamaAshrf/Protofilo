@@ -1,0 +1,46 @@
+$primary-color:rgb(0, 0, 0);
+$secondary-color:rgb(144, 221, 245); 
+.contact{
+    background: 
+    linear-gradient(
+        to right,
+        rgba($primary-color,0.7),
+        rgba($primary-color,0.3)
+    ),
+    url('../Pics/background-aespa2.jpg') 23%;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .inform{
+        display:flex;
+        align-items: center;
+        h3{
+            color: $secondary-color;
+        }
+        margin-bottom: 1rem;
+    }
+    .social-icons{
+        position:unset;
+    }
+}
+
+@media (max-width:450px){
+    .contact{
+        background: 
+        linear-gradient(
+            to right,
+            rgba($primary-color,0.7),
+            rgba($primary-color,0.3)
+        ),
+        url('../Pics/background-aespa2.jpg');
+        background-size: cover;
+        background-position-x: 42%;
+    }
+}

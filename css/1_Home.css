@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(0, 0, 0);
+  color: white;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+}
+header .menu-btn {
+  position: absolute;
+  z-index: 5;
+  right: 1.5rem;
+  top: 0;
+  height: 3rem;
+  padding: 1rem;
+  width: 100vw;
+  cursor: pointer;
+}
+header .menu-btn .menu-btn__burger {
+  position: absolute;
+  right: 0;
+  top: 2rem;
+  width: 28px;
+  height: 3px;
+  background: white;
+  transition: all 0.5s ease-in-out;
+}
+header .menu-btn .menu-btn__burger::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 28px;
+  height: 3px;
+  background: white;
+}
+header .menu-btn .menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 20px;
+  height: 3px;
+  background: rgb(255, 255, 255);
+}
+header .menu-btn .menu-btn__burger.open {
+  transform: rotate(720deg);
+  background: transparent;
+}
+header .menu-btn .menu-btn__burger.open::before {
+  transform: rotate(45deg) translate(5px, 8px);
+}
+header .menu-btn .menu-btn__burger.open::after {
+  width: 28px;
+  transform: rotate(-45deg) translate(3px, -7px);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  opacity: 0.95;
+  visibility: hidden;
+}
+.nav.open {
+  visibility: visible;
+}
+.nav .menu-nav {
+  display: flex;
+  flex-flow: column wrap;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+  list-style-type: none;
+  padding-right: 1rem;
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+}
+.nav .menu-nav.open {
+  transform: translateY(0);
+}
+.nav .menu-nav__item {
+  padding: 2rem 0;
+  transform: translateX(100vw);
+  transition: all 0.5s ease-in-out;
+}
+.nav .menu-nav__item.open {
+  transform: translateX(0);
+}
+.nav .menu-nav__item.active > a {
+  color: rgb(144, 221, 245);
+}
+.nav .menu-nav__link {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  transition: all 0.5s ease-in-out;
+}
+.nav .menu-nav__link:hover {
+  color: rgb(144, 221, 245);
+}
+.nav .menu-nav .menu-nav__item:nth-child(1) {
+  transition-delay: 0.25s;
+}
+.nav .menu-nav .menu-nav__item:nth-child(2) {
+  transition-delay: 0.35s;
+}
+.nav .menu-nav .menu-nav__item:nth-child(3) {
+  transition-delay: 0.45s;
+}
+.nav .menu-nav .menu-nav__item:nth-child(4) {
+  transition-delay: 0.55s;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+main .social-icons {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}
+main .social-icons a {
+  transition: all 0.5s ease-in-out;
+  padding: 0.4rem;
+}
+main .social-icons a:hover {
+  color: rgb(144, 221, 245);
+}
+
+footer {
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0.4rem;
+  right: 1rem;
+  padding: 1rem;
+  color: white;
+  text-align: right;
+}
+
+.home {
+  height: 100%;
+  padding-top: 30vh;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url("../Pics/background-aespa2.jpg") 23%;
+  background-size: cover;
+}
+.home__name {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid white;
+  line-height: 3.5rem;
+}
+.home__name--last {
+  font-size: 2.5rem;
+  color: rgb(144, 221, 245);
+  font-weight: 700;
+  text-wrap: nowrap;
+}
+
+@media (max-width: 450px) {
+  .home {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url("../Pics/background-aespa2.jpg");
+    background-size: cover;
+    background-position-x: 42%;
+  }
+}
+@media (min-width: 845px) {
+  .menu-btn {
+    visibility: hidden;
+  }
+  .nav {
+    width: unset;
+    visibility: visible;
+    align-items: end;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 1rem;
+    z-index: 10;
+  }
+  .nav .menu-nav {
+    display: flex;
+    flex-flow: row;
+    justify-content: end;
+    height: unset;
+    background-color: unset;
+    overflow: hidden;
+    list-style-type: none;
+    padding-right: unset;
+    transform: translateY(0);
+  }
+  .nav .menu-nav__item {
+    transform: translateX(0);
+    padding: 0 0.5rem;
+  }
+  .nav .menu-nav__item a {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=1_Home.css.map */
